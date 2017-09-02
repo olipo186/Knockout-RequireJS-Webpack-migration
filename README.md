@@ -34,7 +34,6 @@ webpack
 Host the site locally using the HTTP server from npm package `http-server`
 ```
 cd knockout-webpack-example
-
 npm install -g http-server
 cd knockout-webpack-example
 http-server -c -1

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "knockout": ["app/lib/knockout"]
+    }
+  }
+}
+

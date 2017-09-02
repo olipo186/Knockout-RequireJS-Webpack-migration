@@ -1,0 +1,12 @@
+<h2>Contact page</h2>
+<label>
+    Message:<br />
+    <textarea data-bind="value: message().text" rows="6" cols="50"></textarea>
+</label>
+<br />
+<br />
+<button data-bind="click: reset">Reset</button>
+<button data-bind="click: submit">Send</button>
+<br />
+<br />
+<message-widget params="message: sentMessage" />

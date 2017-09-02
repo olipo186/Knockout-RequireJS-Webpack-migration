@@ -1,0 +1,14 @@
+{
+  "name": "knockout-example",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "esprima": "^4.0.0",
+    "html-loader": "^0.5.1",
+    "ts-loader": "^2.3.4",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.5"
+  }
+}

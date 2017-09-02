@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Example based on Knockout.js and RequireJS</title>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+        <script src="requirejs.config.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h1 data-bind="text: title"></h1>
+            <index-page />
+        </div>
+        <script>
+            require(['app/app']);
+        </script>
+    </body>
+</html>

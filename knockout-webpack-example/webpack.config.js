@@ -4,7 +4,7 @@ path = require('path');
 module.exports = {
 	watch: true,
 	cache: true,
-	devtool: 'cheap-module-eval-source-map',
+	devtool: 'source-map',
 	entry: {
 		app: './app/app.js',
 	},

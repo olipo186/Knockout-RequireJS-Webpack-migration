@@ -1,4 +1,4 @@
-# Migration from RequireJS to Webpack
+# Migrating from RequireJS to Webpack
 The two projects in this repository demonstrates how a web application based on Knockout can be migrated from RequireJS to Webpack with minimal change.
 
 ## Code changes applied during migration

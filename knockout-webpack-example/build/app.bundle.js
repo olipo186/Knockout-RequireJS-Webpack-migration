@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "build/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1581,15 +1581,21 @@ exports["default"] = Message;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Contact page</h2>\n<label>\n    Message:<br />\n    <textarea data-bind=\"value: message().text\" rows=\"6\" cols=\"50\"></textarea>\n</label>\n<br />\n<br />\n<button data-bind=\"click: reset\">Reset</button>\n<button data-bind=\"click: submit\">Send</button>\n<br />\n<br />\n<message-widget params=\"message: sentMessage\" />\n";
+
+/***/ }),
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_master_viewmodel_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_master_viewmodel_js__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_master_viewmodel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_app_master_viewmodel_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_knockout__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_knockout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_knockout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_components__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_components__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_app_components__);
 // This file is written in JavaScript ES6 (ECMAScript 6)
 
@@ -1600,7 +1606,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_1_knockout___default.a.applyBindings(new __WEBPACK_IMPORTED_MODULE_0_app_master_viewmodel_js___default.a(), document.getElementById('root'));
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
@@ -1616,49 +1622,22 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (re
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
 
     var ko = __webpack_require__(0);
 
-    function RegisterComponent(name, container, template) {
-
-        // If imported module is an ES6 module, the component object is nested
-        if (container.__esModule === true) {
-
-            if (!container.default) throw "No default export found in module: " + name;
-
-            container = container.default;
-        }
-
-        // When template is passed as third argument, expect second argument to be the view model
-        if (template) {
-            container = {
-                viewModel: container,
-                template: template
-            };
-        }
-
-        // Test for viewModel and template inside module
-        if (!container.viewModel || !container.template) throw "Expected module to contain both viewModel and template: " + name;
-
-        ko.components.register(name, {
-            viewModel: container.viewModel,
-            template: container.template
-        });
-    }
-
-    RegisterComponent("index-page", __webpack_require__(5));
-    RegisterComponent("main-page", __webpack_require__(7));
-    RegisterComponent("contact-page", __webpack_require__(9), __webpack_require__(10));
-    RegisterComponent("message-widget", __webpack_require__(11));
+    ko.components.register("index-page", __webpack_require__(6));
+    ko.components.register("main-page", __webpack_require__(8));
+    ko.components.register("contact-page", __webpack_require__(10));
+    ko.components.register("message-widget", __webpack_require__(11));
 }.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
@@ -1671,19 +1650,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (re
 
     return {
         viewModel: IndexPage,
-        template: __webpack_require__(6)
+        template: __webpack_require__(7)
     };
 }.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = "<ul>\n    <li><a href=\"#\" data-bind=\"click: page.bind($component, 'main')\">main</a></li>\n    <li><a href=\"#\" data-bind=\"click: page.bind($component, 'contact')\">contact</a></li>\n</ul>\n\n<!-- ko component: { name: page() + '-page' } --><!-- /ko -->";
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
@@ -1700,24 +1679,26 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (re
 
     return {
         viewModel: MainPage,
-        template: __webpack_require__(8)
+        template: __webpack_require__(9)
     };
 }.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = "<h2>Main page</h2>\n<p data-bind=\"text: message().text\"></p>";
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
+var template = __webpack_require__(2);
+exports.template = template;
 var ko = __webpack_require__(0);
 var message_1 = __webpack_require__(1);
 var ContactPage = /** @class */ (function () {
@@ -1736,30 +1717,32 @@ var ContactPage = /** @class */ (function () {
     }
     return ContactPage;
 }());
-exports["default"] = ContactPage;
+exports.viewModel = ContactPage;
 
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = "<h2>Contact page</h2>\n<label>\n    Message:<br />\n    <textarea data-bind=\"value: message().text\" rows=\"6\" cols=\"50\"></textarea>\n</label>\n<br />\n<br />\n<button data-bind=\"click: reset\">Reset</button>\n<button data-bind=\"click: submit\">Send</button>\n<br />\n<br />\n<message-widget params=\"message: sentMessage\" />\n";
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "viewModel", function() { return MessageWidget; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_components_message_widget_html__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_components_message_widget_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_app_components_message_widget_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_knockout__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_knockout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_knockout__);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "template", function() { return __WEBPACK_IMPORTED_MODULE_0_app_components_message_widget_html__; });
 
-    var ko = __webpack_require__(0);
 
-    function MessageWidget(params) {
+
+class MessageWidget {
+    constructor(params) {
         this.message = params.message;
-    };
+    }
+}
 
-    return { viewModel: MessageWidget, template: __webpack_require__(12) };
-}.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
 
 /***/ }),
 /* 12 */

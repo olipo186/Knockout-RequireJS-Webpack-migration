@@ -1,10 +1,11 @@
-define(function (require) {
+import * as template from "app/components/message-widget.html";
+import * as ko from "knockout";
 
-    var ko = require("knockout");
-    
-    function MessageWidget(params) {
+class MessageWidget {
+    constructor(params) {
         this.message = params.message;
-    };
+    }
+}
 
-    return { viewModel: MessageWidget, template: require("app/components/message-widget.html") };
-});
+export { template as template }
+export { MessageWidget as viewModel }

@@ -1,7 +1,8 @@
+import * as template from "app/components/contact-page.html";
 import * as ko from "knockout";
 import Message from "app/models/message";
 
-export default class ContactPage {
+class ContactPage {
     
     sampleMessage = "Hi,\n\nThis view model was written with TypeScript.\n\nBR"
     sentMessage = ko.observable();
@@ -20,3 +21,6 @@ export default class ContactPage {
     };
 
 }
+
+export { template as template }
+export { ContactPage as viewModel }

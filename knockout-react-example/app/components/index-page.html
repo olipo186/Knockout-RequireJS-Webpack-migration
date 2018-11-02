@@ -1,0 +1,12 @@
+<ul>
+    <li><a href="#" data-bind="click: page.bind($component, 'main')">main</a></li>
+    <li><a href="#" data-bind="click: page.bind($component, 'contact')">contact</a></li>
+</ul>
+
+<p>
+    The knockout observable (phrase) is: <strong data-bind="text: phrase"></strong>
+</p>
+
+<button data-bind="click: update">Update phrase</button>
+
+<!-- ko component: { name: page() + '-page' } --><!-- /ko -->
